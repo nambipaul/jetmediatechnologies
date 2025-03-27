@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #chatbot-container {
+      width: 300px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    #chatbot-header {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    #chatbot-messages {
+      height: 300px;
+      overflow-y: auto;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .message {
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 5px;
+      max-width: 70%;
+      word-wrap: break-word;
+    }
+
+    .user-message {
+      background-color: #cce5ff;
+      margin-left: auto;
+      text-align: right;
+    }
+
+    .ai-message {
+      background-color: #e9ecef;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    #chat-input-container {
+      display: flex;
+      padding: 10px;
+    }
+
+    #chat-input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    #send-message {
+      margin-left: 10px;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #send-message:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="chatbot-container">
+    <div id="chatbot-header">Core AI Chat</div>
+    <div id="chatbot-messages"></div>
+    <div id="chat-input-container">
+      <input type="text" id="chat-input" placeholder="Type your message...">
+      <button id="send-message">Send</button>
+    </div>
+  </div>
+
+  <script>
+    // Connect to the WebSocket server
+    const ws = new WebSocket('ws://localhost:3000');
+
+    const chatInput = document.getElementById('chat-input');
+    const sendMessageButton = document.getElementById('send-message');
+    const chatbotMessages = document.getElementById('chatbot-messages');
+
+    // Handle WebSocket connection
+    ws.onopen = () => {
+      console.log('Connected to the WebSocket server');
+    };
+
+    // Handle incoming messages from the server
+    ws.onmessage = (event) => {
+      const message = event.data;
+
+      // Display the AI's response
+      const aiMessage = document.createElement('div');
+      aiMessage.classList.add('message', 'ai-message');
+      aiMessage.textContent = message;
+      chatbotMessages.appendChild(aiMessage);
+
+      // Scroll to the bottom of the chat
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    };
+
+    // Handle WebSocket errors
+    ws.onerror = (error) => {
+      console.error('WebSocket error:', error);
+    };
+
+    // Handle WebSocket connection close
+    ws.onclose = () => {
+      console.log('Disconnected from the WebSocket server');
+    };
+
+    // Send message when clicking the "Send" button
+    sendMessageButton.addEventListener('click', () => {
+      sendMessage();
+    });
+
+    // Send message when pressing "Enter"
+    chatInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        sendMessage();
+      }
+    });
+
+    // Function to send a message
+    function sendMessage() {
+      const message = chatInput.value.trim();
+      if (message) {
+        // Display the user's message
+        const userMessage = document.createElement('div');
+        userMessage.classList.add('message', 'user-message');
+        userMessage.textContent = message;
+        chatbotMessages.appendChild(userMessage);
+
+        // Send the message to the server
+        ws.send(message);
+
+        // Clear the input
+        chatInput.value = '';
+
+        // Scroll to the bottom of the chat
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }
+    }
+  </script>
+</body>
+</html>

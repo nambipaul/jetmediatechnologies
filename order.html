@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Order Form</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .order-form {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .order-form h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+        }
+
+        .order-form label {
+            display: block;
+            margin-top: 1rem;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        .order-form input, 
+        .order-form select, 
+        .order-form textarea {
+            width: 100%;
+            margin-top: 0.5rem;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .order-form textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .order-form button {
+            margin-top: 1.5rem;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #3b82f6;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .order-form button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .order-form .checkbox {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .order-form .checkbox input {
+            margin-right: 0.5rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: #fff;
+            padding: 12px 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+        }
+
+        .whatsapp-button img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .order-form {
+                padding: 1.5rem;
+            }
+
+            .order-form input, 
+            .order-form select, 
+            .order-form textarea {
+                padding: 0.6rem;
+            }
+
+            .whatsapp-button {
+                font-size: 12px;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <form class="order-form">
+        <h2>Get Started with Your Website</h2>
+
+        <!-- Contact Information -->
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <!-- Project Details -->
+        <label for="website-type">Website Type:</label>
+        <select id="website-type" name="website-type" required>
+            <option value="">Select Website Type</option>
+            <option value="business">Business</option>
+            <option value="e-commerce">E-commerce</option>
+            <option value="database System development">DATABASE System development</option>
+            <option value="blog">Blog</option>
+            <option value="custom">Custom</option>
+        </select>
+
+        <label for="pages">Number of Pages:</label>
+        <input type="number" id="pages" name="pages" min="1" required>
+
+        <label for="features">Required Features:</label>
+        <textarea id="features" name="features" placeholder="e.g., SEO, Payment Integration, Contact Form"></textarea>
+
+        <!-- Package Selection -->
+        <label for="package">Select Package:</label>
+        <select id="package" name="package" required>
+            <option value="">Select a Package</option>
+            <option value="basic">Basic - $550</option>
+            <option value="premium">Premium - $1500</option>
+            <option value="ultimate">Ultimate - $2000</option>
+        </select>
+
+        <!-- Timeline & Budget -->
+        <label for="start-date">Preferred Start Date:</label>
+        <input type="date" id="start-date" name="start-date" required>
+
+        <label for="completion-date">Target Completion Date:</label>
+        <input type="date" id="completion-date" name="completion-date" required>
+
+        <!-- Payment Method -->
+        <label for="payment-method">Payment Method:</label>
+        <select id="payment-method" name="payment-method" required>
+            <option value="">Select Payment Method</option>
+            <option value="mobile-money">Mobile Money</option>
+            <option value="credit-card">Credit Card</option>
+            <option value="paypal">PayPal</option>
+        </select>
+
+        <!-- Terms and Conditions -->
+        <div class="checkbox">
+            <input type="checkbox" id="terms" name="terms">
+            <label for="terms">I agree to the terms and conditions.</label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="submit-btn" disabled>Submit Order</button>
+    </form>
+
+    <a class="whatsapp-button" href="https://wa.me/+256752824514" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">Chat with Us
+    </a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const termsCheckbox = document.getElementById("terms");
+            const submitButton = document.getElementById("submit-btn");
+
+            // Enable submit button only if terms are accepted
+            termsCheckbox.addEventListener("change", function() {
+                submitButton.disabled = !this.checked;
+            });
+
+            // Form submission handling
+            document.querySelector('.order-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const packageType = document.getElementById('package').value;
+                alert(`Thank you, ${name}! Your order for the ${packageType} package has been received. We'll contact you at ${email} soon.`);
+                this.reset();
+                submitButton.disabled = true; // Disable button again after submission
+            });
+        });
+    </script>
+
+</body>
+</html>

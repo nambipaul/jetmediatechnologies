@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - VATECH</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Assuming you have a separate CSS file -->
+  <style>
+    /* General Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: #222;
+      color: #fff;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #ffeb3b;
+    }
+
+    /* Mobile Navigation */
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+
+    .nav-menu {
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        background: #222;
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      nav ul {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+    }
+
+    /* Services Section */
+    .timeline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 60px 20px;
+      background: #f5f5f5;
+    }
+
+    .timeline-item {
+      width: 30%;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .timeline-box {
+      width: 100%;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .timeline-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .timeline-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .timeline-text h2 {
+      font-size: 24px;
+      color: #222;
+      margin-bottom: 20px;
+    }
+
+    .timeline-text ul {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .timeline-text ul li {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    /* Responsive Services Layout */
+    @media (max-width: 768px) {
+      .timeline {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 10px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .timeline-box {
+        padding: 15px;
+      }
+
+      .timeline-text h2 {
+        font-size: 20px;
+      }
+
+      .timeline-text ul li {
+        font-size: 14px;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <button class="hamburger">&#9776;</button>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html#blog">Blog</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- Services Content Section -->
+  <section class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-box">
+        <div class="timeline-image">
+          <img src="images/jet media innovation2.png" alt="Innovation Strategy">
+        </div>
+        <div class="timeline-text">
+          <h2>WE THINK WITH YOU</h2>
+          <ul>
+            <li>Innovation Strategy</li>
+            <li>Digital Product Strategy</li>
+            <li>Technology Architecture</li>
+            <li>Information Architecture</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-box">
+        <div class="timeline-image">
+          <img src="images/jet media digital.png" alt="Digital Product Design">
+        </div>
+        <div class="timeline-text">
+          <h2>WE ENVISION WITH YOU</h2>
+          <ul>
+            <li>Digital Product Design</li>
+            <li>UX Research & Design</li>
+            <li>Website Design</li>
+            <li>Brand Identity Design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-box">
+        <div class="timeline-image">
+          <img src="images/jet media web development logo.png" alt="Web App Development">
+        </div>
+        <div class="timeline-text">
+          <h2>WE BUILD WITH YOU</h2>
+          <ul>
+            <li>Web App Development</li>
+            <li>Magento Development</li>
+            <li>WordPress Development</li>
+            <li>Mobile App Development</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Jet Media Technologies. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Mobile Navigation Toggle
+    document.addEventListener("DOMContentLoaded", function() {
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburger.addEventListener("click", function() {
+        navMenu.classList.toggle("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
