@@ -921,12 +921,12 @@
   <script>
     // Chatbot Script
     document.addEventListener('DOMContentLoaded', function () {
-      const chatbotButton = document.getElementById('chatbot-button');
-      const chatbotBox = document.getElementById('chatbot-box');
-      const closeChat = document.getElementById('close-chat');
-      const sendMessageButton = document.getElementById('send-message');
-      const chatInput = document.getElementById('chat-input');
-      const chatbotMessages = document.getElementById('chatbot-messages');
+      const chatbotButton = document.getElementById('Chatbot-button');
+      const chatbotBox = document.getElementById('Chatbot-box');
+      const closeChat = document.getElementById('Close-Chat');
+      const sendMessageButton = document.getElementById('Send-Message');
+      const chatInput = document.getElementById('Chat-input');
+      const chatbotMessages = document.getElementById('Chatbot-Messages');
 
       const responses = {
         "hello": "Hi there! How can I assist you today? 😊 Let me know what's on your mind, and let’s make magic happen!",
@@ -936,72 +936,72 @@
         "good afternoon": "Good afternoon! I hope your day is going well. How can I assist you?",
         "good evening": "Good evening! I’m here to help you wind down or solve any problems. What’s up?",
         "how are you": "I’m just a chatbot, but I’m here and ready to help you! How about you? How’s your day going?",
-        "how are you doing": "I’m doing great, thanks for asking! How can I assist you today? Let’s make today productive and meaningful!",
+        "How are you doing": "I’m doing great, thanks for asking! How can I assist you today? Let’s make today productive and meaningful!",
         "what’s up": "Not much, just here to help you! What can I do for you?",
         "how’s it going": "It's going well! How can I assist you today?",
         "how’s your day": "My day is great so far! How about yours? How can I help you?",
         "how’s life": "Life is good when I can help people like you! What’s on your mind?",
         "what’s new": "Just here to help you! What can I do for you?",
-        "howdy": "Howdy! How can I assist you today?",
+        "Howdy": "Howdy! How can I assist you today?",
         "yo": "Yo! What can I do for you?",
         "hi there": "Hi there! How can I assist you today?",
         "hello there": "Hello there! What can I do for you?",
-        "hi bot": "Hi! I'm Jet media technologies AI, your virtual assistant. How can I help you?",
-        "hello bot": "Hello! I'm Jet media technologies AI, your virtual assistant. How can I help you?",
-        "hey bot": "Hey! I'm Jet media technologies AI, your virtual assistant. How can I help you?",
-        "hi assistant": "Hi! I'm Jet media technologies AI, your virtual assistant. How can I help you?",
-        "hello sir": "Hello! I'm Jet media technologies AI, your virtual assistant. How can I help you?",
-        "hey ": "Hey! I'm Jet media technologies AI, your virtual assistant. How can I help you?",
-        "hi sir": "Hi! I'm Jet media technologies AI, your virtual assistant. How can I help you?",
-        "hello madam": "Hello! I'm Jet media technologies AI, your virtual assistant. How can I help you?",
-        "hey ai": "Hey! I'm Jet media technologies AI, your virtual assistant. How can I help you?",
-        "hi core ai": "Hi! Jet media technologies AI, your virtual assistant. How can I help you?",
-        "hello core ai": "Hello! I'm Jet media technologies AI, your virtual assistant. How can I help you?",
-        "hey core ai": "Hey! I'm Jet media technologies AI, your virtual assistant. How can I help you?",
-        "hi core tech": "Hi! I'm Jet media technologies AI, your virtual assistant. How can I help you?",
-        "hello core tech": "Hello! I'm Jet media technologies AI, your virtual assistant. How can I help you?",
-        "hey core tech": "Hey! I'm Jet media technologies AI, your virtual assistant. How can I help you?",
-        "what is your name": "I am Jet media technologies AI, your virtual assistant!",
-        "who are you": "I am Jet media technologies AI, your virtual assistant!",
-        "what’s your name": "I am Jet media technologies AI, your virtual assistant!",
+        "hi bot": "Hi! I'm Jet Media Technologies AI, your virtual assistant. How can I help you?",
+        "hello bot": "Hello! I'm Jet Media Technologies AI, your virtual assistant. How can I help you?",
+        "hey bot": "Hey! I'm Jet Media Technologies AI, your virtual assistant. How can I help you?",
+        "hi assistant": "Hi! I'm Jet Media Technologies AI, your virtual assistant. How can I help you?",
+        "hello sir": "Hello! I'm Jet Media Technologies AI, your virtual assistant. How can I help you?",
+        "hey ": "Hey! I'm Jet Media Technologies AI, your virtual assistant. How can I help you?",
+        "hi sir": "Hi! I'm Jet Media Technologies AI, your virtual assistant. How can I help you?",
+        "hello madam": "Hello! I'm Jet Media Technologies AI, your virtual assistant. How can I help you?",
+        "hey AI": "Hey! I'm Jet Media Technologies AI, your virtual assistant. How can I help you?",
+        "hi Jet Media Technologies": "Hi! Jet Media Technologies AI, your virtual assistant. How can I help you?",
+        "hello Jet Media Technologies": "Hello! I'm Jet Media Technologies AI, your virtual assistant. How can I help you?",
+        "hey Jet Media Technologies": "Hey! I'm Jet Media Technologies AI, your virtual assistant. How can I help you?",
+        "hi Jet Media Technologies": "Hi! I'm Jet Media Technologies AI, your virtual assistant. How can I help you?",
+        "hello core tech": "Hello! I'm Jet Media Technologies AI, your virtual assistant. How can I help you?",
+        "hey core tech": "Hey! I'm Jet Media Technologies AI, your virtual assistant. How can I help you?",
+        "What is your name": "I am Jet Media Technologies AI, your virtual assistant!",
+        "Who are you": "I am Jet Media Technologies AI, your virtual assistant!",
+        "what’s your name": "I am Jet Media Technologies AI, your virtual assistant!",
         "what do you do": "I help answer your questions about our services, pricing, and more!",
         "what can you do": "I can help you with information about our services, pricing, and more!",
         "what are you": "I am an AI-powered virtual assistant here to help you!",
-        "are you a bot": "Yes, I am an AI-powered bot here to assist you!",
-        "are you a human": "No, I am an AI-powered virtual assistant!",
-        "are you real": "I am a virtual assistant powered by AI, so I’m not a human, but I’m here to help!",
-        "are you an ai": "Yes, I am an AI-powered virtual assistant!",
-        "are you a robot": "Yes, I am a virtual assistant powered by AI!",
-        "are you a virtual assistant": "Yes, I am Jet media technologies AI, your virtual assistant!",
-        "what is your purpose": "My purpose is to assist you with your questions about our services, pricing, and more!",
-        "what is your job": "My job is to help you with information about our services, pricing, and more!",
-        "what is your role": "My role is to assist you as a virtual assistant!",
+        "Are you a bot": "Yes, I am an AI-powered bot here to assist you!",
+        "Are you a human": "No, I am an AI-powered virtual assistant!",
+        "Are you real": "I am a virtual assistant powered by AI, so I’m not a human, but I’m here to help!",
+        "Are you an AI": "Yes, I am an AI-powered virtual assistant!",
+        "Are you a robot": "Yes, I am a virtual assistant powered by AI!",
+        "Are you a virtual assistant": "Yes, I am Jet Media Technologies AI, your virtual assistant!",
+        "What is your purpose": "My purpose is to assist you with your questions about our services, pricing, and more!",
+        "What is your job": "My job is to help you with information about our services, pricing, and more!",
+        "What is your role": "My role is to assist you as a virtual assistant!",
         "what are you here for": "I’m here to help you with your questions about our services, pricing, and more!",
         "what do you help with": "I help with information about our services, pricing, and more!",
         "what can you help me with": "I can help you with information about our services, pricing, and more!",
         "what do you do here": "I assist you with your questions about our services, pricing, and more!",
-        "what is your function": "My function is to assist you as a virtual assistant!",
-        "who made you": "I was created by a talented team of developers at Core Technologies. They designed me to assist you with your questions and provide helpful information!",
+        "What is your function": "My function is to assist you as a virtual assistant!",
+        "Who made you": "I was created by a talented team of developers at Core Technologies. They designed me to assist you with your questions and provide helpful information!",
         "who created you": "I was created by the amazing team at Core Technologies. They built me to help you with your queries!",
         "who built you": "I was built by the brilliant minds at Core Technologies. They designed me to assist you with your questions!",
-        "who designed you": "I was designed by the creative team at Core Technologies. They made me to help you with your needs!",
+        "Who designed you": "I was designed by the creative team at Core Technologies. They made me to help you with your needs!",
         "who programmed you": "I was programmed by the skilled developers at Core Technologies. They created me to assist you with your questions!",
-        "who developed you": "I was developed by the talented team at Core Technologies. They built me to help you with your queries!",
-        "who is your creator": "My creator is the team at Jet media technologies. They designed me to assist you with your questions!",
-        "who is your developer": "My developer is the team at Jet media technologies. They built me to help you with your queries!",
-        "who is your maker": "My maker is the team at Jet media technologies. They created me to assist you with your questions!",
-        "who is your designer": "My designer is the team at Jet media technologies. They built me to help you with your queries!",
-        "who is your programmer": "My programmer is the team at Jet media technologies. They created me to assist you with your questions!",
-        "who is your builder": "My builder is the team at Jet media technologies . They designed me to help you with your queries!",
+        "Who developed you": "I was developed by the talented team at Core Technologies. They built me to help you with your queries!",
+        "Who is your creator": "My creator is the team at Jet Media Technologies. They designed me to assist you with your questions!",
+        "Who is your developer": "My developer is the team at Jet Media Technologies. They built me to help you with your queries!",
+        "Who is your maker": "My maker is the team at Jet Media Technologies. They created me to assist you with your questions!",
+        "Who is your designer": "My designer is the team at Jet Media Technologies. They built me to help you with your queries!",
+        "Who is your programmer": "My programmer is the team at Jet Media Technologies. They created me to assist you with your questions!",
+        "who is your builder": "My builder is the team at Jet Media Technologies. They designed me to help you with your queries!",
         "what services do you offer": "We offer web development, app development, UI/UX design, e-commerce solutions, and digital marketing.",
         "what do you offer": "We offer web development, app development, UI/UX design, e-commerce solutions, and digital marketing.",
         "what services are available": "We offer web development, app development, UI/UX design, e-commerce solutions, and digital marketing.",
         "what can you do for me": "We can help you with web development, app development, UI/UX design, e-commerce solutions, and digital marketing.",
         "what do you provide": "We provide web development, app development, UI/UX design, e-commerce solutions, and digital marketing.",
         "what are your services": "Our services include web development, app development, UI/UX design, e-commerce solutions, and digital marketing.",
-        "what kind of services do you offer": "We have services like web development, app development, UI/UX design, e-commerce solutions, and digital marketing.",
+        "What kind of services do you offer": "We have services like web development, app development, UI/UX design, e-commerce solutions, and digital marketing.",
         "what do you specialize in": "We specialize in web development, app development, UI/UX design, e-commerce solutions, and digital marketing.",
-        "what are your offerings": "Our offerings include web development, app development, UI/UX design, e-commerce solutions, and digital marketing.",
+        "What are your offerings": "Our offerings include web development, app development, UI/UX design, e-commerce solutions, and digital marketing.",
         "what can I get from you": "You can get web development, app development, UI/UX design, e-commerce solutions, and digital marketing from us.",
         "what do you do for clients": "We provide web development, app development, UI/UX design, e-commerce solutions, and digital marketing for our clients.",
         "what are your capabilities": "Our capabilities include web development, app development, UI/UX design, e-commerce solutions, and digital marketing.",
@@ -1011,41 +1011,41 @@
         "what do you create": "We create websites, apps, and e-commerce platforms.",
         "what do you develop": "We develop websites, apps, and e-commerce platforms.",
         "what do you design": "We design websites, apps, and e-commerce platforms.",
-        "How long can you take to build website": "it depends on the website but it takes 1 month to 2 mothws",
+        "How long can You take to build a Website": " It depends on the website but it takes 1 month to 2 months",
         "How much is t0 build a website": "Basic costs $550, premium costs $1500, unlimited costs $2000",
         "How much is a website": "Basic costs $550, premium costs $1500, unlimited costs $2000",
-        "How much is asimple website": "Basic costs $550, premium costs $1500, unlimited costs $2000",
+        "How much is a simple website": "Basic costs $550, premium costs $1500, unlimited costs $2000",
         "How much is t0 build a simple website": "Basic costs $550, premium costs $1500, unlimited costs $2000",
-        "How much is website": "Basic costs $550, premium costs $1500, unlimited costs $2000",
-        "i need a website": "Awesome! I can help you with that. Do you need an e-commerce store, a business website, or a personal blog? Let me know your requirements, and I'll guide you further.",
-        "can you build a website for me": "Absolutely! I can help you build a professional website. Do you need an e-commerce store, a business website, or a personal blog?",
-        "i want a website": "Great! I can help you create a website. Do you need an e-commerce store, a business website, or a personal blog?",
-        "i need a new website": "Sure! I can help you create a new website. Do you need an e-commerce store, a business website, or a personal blog?",
-        "i need a professional website": "No problem! I can help you create a professional website. Do you need an e-commerce store, a business website, or a personal blog?",
-        "i need a business website": "Got it! I can help you create a business website. Do you need features like contact forms, appointment booking, or e-commerce integration?",
-        "i need a personal website": "Sure! I can help you create a personal website. Do you need a portfolio, blog, or something else?",
-        "i need a portfolio website": "Great! I can help you create a portfolio website. Do you have any specific features in mind?",
-        "i need an e-commerce website": "Awesome! I can help you create an e-commerce website. Do you prefer Shopify, WooCommerce, or a custom-built store?",
-        "i need a custom website": "No problem! I can help you create a custom website. Do you have any specific requirements?",
-        "i need a responsive website": "Sure! I can help you create a responsive website. Do you need it for mobile, tablet, and desktop?",
-        "i need a modern website": "Great! I can help you create a modern website. Do you have any design preferences?",
-        "how much is a website": "Our packages start from $550 for a basic site and go up depending on features. Would you like to see some samples or discuss your project further?",
-        "how much do you charge for a website": "Our packages start from $550 for a basic site and go up depending on features. Would you like to see some samples or discuss your project further?",
-        "how much is one website": "Our packages start from $550 for a basic site and go up depending on features. Would you like to see some samples or discuss your project further?",
-        "i feel sad": "I'm sorry to hear that. Remember, it's okay to feel this way. If you need someone to talk to, I'm here for you. You're not alone.",
-        "i feel lonely": "I'm here for you. Sometimes it helps to reach out to a friend or family member. You matter, and people care about you.",
-        "i feel stressed": "Take a deep breath. It's okay to feel stressed sometimes. Try to take a break, go for a walk, or do something you enjoy. You've got this!",
-        "i feel anxious": "Anxiety can be tough, but remember to take things one step at a time. Focus on your breathing and try to ground yourself. You're stronger than you think.",
-        "i feel overwhelmed": "It's okay to feel overwhelmed. Break things down into smaller tasks and tackle them one at a time. You're doing better than you think!",
-        "i feel happy": "That's wonderful to hear! I'm so glad you're feeling happy. Keep doing what makes you smile! 😊",
-        "i feel excited": "That's awesome! Excitement is such a great feeling. Enjoy the moment and make the most of it! 🎉",
-        "i feel grateful": "Gratitude is such a powerful emotion. It's great that you're feeling this way. Keep focusing on the positive things in life! 🌟",
-        "what is the meaning of life": "The meaning of life is a deeply personal question. For some, it's about happiness, love, or making a difference. What do you think?",
+        "How much is a website": "Basic costs $550, premium costs $1500, unlimited costs $2000",
+        "I need a website": "Awesome! I can help you with that. Do you need an e-commerce store, a business website, or a personal blog? Let me know your requirements, and I'll guide you further.",
+        "Can you build a website for me": "Absolutely! I can help you build a professional website. Do you need an e-commerce store, a business website, or a personal blog?",
+        "I want a website": "Great! I can help you create a website. Do you need an e-commerce store, a business website, or a personal blog?",
+        "I need a new website": "Sure! I can help you create a new website. Do you need an e-commerce store, a business website, or a personal blog?",
+        "I need a professional website": "No problem! I can help you create a professional website. Do you need an e-commerce store, a business website, or a personal blog?",
+        "I need a business website": "Got it! I can help you create a business website. Do you need features like contact forms, appointment booking, or e-commerce integration?",
+        "I need a personal website": "Sure! I can help you create a personal website. Do you need a portfolio, blog, or something else?",
+        "I need a portfolio website": "Great! I can help you create a portfolio website. Do you have any specific features in mind?",
+        "I  need an e-commerce website": "Awesome! I can help you create an e-commerce website. Do you prefer Shopify, WooCommerce, or a custom-built store?",
+        "I need a custom website": "No problem! I can help you create a custom website. Do you have any specific requirements?",
+        "I need a responsive website": "Sure! I can help you create a responsive website. Do you need it for mobile, tablet, and desktop?",
+        "I need a modern website": "Great! I can help you create a modern website. Do you have any design preferences?",
+        "How much is a website": "Our packages start from $550 for a basic site and go up depending on features. Would you like to see some samples or discuss your project further?",
+        "How much do you charge for a website": "Our packages start from $550 for a basic site and go up depending on features. Would you like to see some samples or discuss your project further?",
+        "How much is one website": "Our packages start from $550 for a basic site and go up depending on features. Would you like to see some samples or discuss your project further?",
+        "I feel sad": "I'm sorry to hear that. Remember, it's okay to feel this way. If you need someone to talk to, I'm here for you. You're not alone.",
+        "I feel lonely": "I'm here for you. Sometimes it helps to reach out to a friend or family member. You matter, and people care about you.",
+        "I feel stressed": "Take a deep breath. It's okay to feel stressed sometimes. Try to take a break, go for a walk, or do something you enjoy. You've got this!",
+        "I feel anxious": "Anxiety can be tough, but remember to take things one step at a time. Focus on your breathing and try to ground yourself. You're stronger than you think.",
+        "I feel overwhelmed": "It's okay to feel overwhelmed. Break things down into smaller tasks and tackle them one at a time. You're doing better than you think!",
+        "I feel happy": "That's wonderful to hear! I'm so glad you're feeling happy. Keep doing what makes you smile! 😊",
+        "I feel excited": "That's awesome! Excitement is such a great feeling. Enjoy the moment and make the most of it! 🎉",
+        "I feel grateful": "Gratitude is such a powerful emotion. It's great that you're feeling this way. Keep focusing on the positive things in life! 🌟",
+        "What is the meaning of life": "The meaning of life is a deeply personal question. For some, it's about happiness, love, or making a difference. What do you think?",
         "what is happiness": "Happiness is a state of well-being and contentment. It often comes from meaningful relationships, personal growth, and doing what you love.",
         "what is love": "Love is a deep connection and care for someone or something. It can be romantic, familial, or even a passion for what you do.",
         "what is success": "Success is achieving your goals and finding fulfillment. It's different for everyone—some find it in their career, others in relationships or personal growth.",
-        "what is the purpose of life": "The purpose of life is to find meaning and fulfillment. It could be through relationships, helping others, or pursuing your passions.",
-        "what is the universe": "The universe is everything that exists—all matter, energy, space, and time. It's vast, mysterious, and full of wonders waiting to be discovered.",
+        "What is the purpose of life": "The purpose of life is to find meaning and fulfillment. It could be through relationships, helping others, or pursuing your passions.",
+        "What is the universe": "The universe is everything that exists—all matter, energy, space, and time. It's vast, mysterious, and full of wonders waiting to be discovered.",
         "what is time": "Time is a measure of moments and events. It's a constant flow that shapes our lives and the universe. How we use it defines our journey.",
         "what is wisdom": "Wisdom is the ability to make good judgments and decisions based on knowledge and experience. It often comes with time and reflection.",
         "tell me a joke": "Why don't scientists trust atoms? Because they make up everything! 😄",
@@ -1057,29 +1057,29 @@
         "what’s your favorite book": "I don’t read books, but I’ve heard The Alchemist is inspiring. Have you read it?",
         "what’s your favorite animal": "I don’t have a favorite, but I think dolphins are fascinating. What’s yours?",
         "bye": "Goodbye! Have a great day! 😊",
-        "goodbye": "Goodbye! Have a great day! 😊",
-        "see you": "See you later! Have a great day! 😊",
+        "Goodbye": "Goodbye! Have a great day! 😊",
+        "See you": "See you later! Have a great day! 😊",
         "talk to you later": "Talk to you later! Have a great day! 😊",
         "default": "I didn't quite get that. Could you rephrase it or ask about our services, pricing, or website development? You can also contact us at jetmediatech@gmail.com or call +256752824514."
       };
 
       // Toggle chatbot visibility
       chatbotButton.addEventListener('click', function () {
-        document.body.classList.add('open-chat');
+        document.body.classList.add('Open-chat');
       });
 
       // Close chatbot
-      closeChat.addEventListener('click', function () {
-        document.body.classList.remove('open-chat');
+      CloseChat.addEventListener('click', function () {
+        document.body.classList.remove('Open-chat');
       });
 
-      // Send message when clicking the "Send" button
+      // SendMessage when clicking the "Send" button
       sendMessageButton.addEventListener('click', function () {
         sendMessage();
       });
 
-      // Send message when pressing "Enter" (without Shift key)
-      chatInput.addEventListener('keydown', function (event) {
+      // Send Message when pressing "Enter" (without Shift key)
+      ChatInput.addEventListener('Keydown', function (event) {
         if (event.key === 'Enter' && !event.shiftKey) {
           event.preventDefault();
           sendMessage();
@@ -1091,9 +1091,9 @@
         const message = chatInput.value.trim().toLowerCase();
         if (message) {
           const userMessage = document.createElement('div');
-          userMessage.classList.add('user-message');
-          userMessage.textContent = chatInput.value;
-          chatbotMessages.appendChild(userMessage);
+          userMessage.classList.add('user-Message');
+          user-Message.textContent = chatInput.value;
+          ChatbotMessages.appendChild(user-Message);
 
           chatInput.value = '';
 
@@ -1110,14 +1110,14 @@
       // Close chatbot when clicking outside
       document.body.addEventListener('click', function (event) {
         if (!chatbotBox.contains(event.target) && !chatbotButton.contains(event.target)) {
-          document.body.classList.remove('open-chat');
+          document.body.classList.remove('Open-chat');
         }
       });
 
       // Auto-focus on text input when the chatbot opens
       chatbotButton.addEventListener('click', function () {
         setTimeout(function () {
-          chatInput.focus();
+          ChatInput.focus();
         }, 300);
       });
     });
@@ -1126,7 +1126,7 @@
     document.getElementById("newsletter-form").addEventListener("submit", function (event) {
       event.preventDefault();
       let email = document.getElementById("newsletter-email").value;
-      if (!validateEmail(email)) {
+      if (ValidateEmail(email)) {
         alert("Please enter a valid email address.");
         return;
       }
@@ -1139,8 +1139,8 @@
     }
 
     // Back to Top Button
-    const backToTopButton = document.getElementById('back-to-top');
-    window.onscroll = () => {
+    const backToTopButton = document.getElementById('back-To-Top');
+    window.Onscroll = () => {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         backToTopButton.style.display = 'block';
       } else {
@@ -1160,9 +1160,9 @@
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.is-Intersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          observer.UnObserve(entry.target);
         }
       });
     }, options);
